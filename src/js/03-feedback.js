@@ -10,9 +10,10 @@ inputForm.addEventListener('input', throttle(onFormInput, 500));
 inputForm.addEventListener('submit', submitForm);
 
 function onFormInput() {
+  newFeedback = inputForm.elements;
   let email = inputForm.email.value;
   let message = inputForm.message.value;
-  let realtimeStorage = { email, message };
+  realtimeStorage = { email, message };
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(realtimeStorage));
 }
 
